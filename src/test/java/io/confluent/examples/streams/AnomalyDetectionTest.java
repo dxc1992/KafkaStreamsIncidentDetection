@@ -59,7 +59,7 @@ public class AnomalyDetectionTest {
     String outputTopicStr = "test-output-topic";
     //Create Actual Stream Processing pipeline
     AnomalyDetection.createAnomalyDetectionStream(builder, inputTopicStr, outputTopicStr );
-    testDriver = new TopologyTestDriver(builder.build(), WordCountLambdaExample.getStreamsConfiguration("localhost:9092"));
+    testDriver = new TopologyTestDriver(builder.build(), AnomalyDetection.getStreamsConfiguration("localhost:9092"));
     inputTopic = testDriver.createInputTopic(inputTopicStr,
                                              stringSerializer,
                                              stringSerializer);
